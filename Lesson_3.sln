@@ -1,0 +1,37 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.31624.102
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Lab_3", "Lab_3\Lab_3.csproj", "{A25C0C41-BD02-4ABD-AC94-9B3543FC44A1}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Classwork", "Classwork\Classwork.csproj", "{500F9073-6AF4-46A4-9E0E-57AEDA18DA8A}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Homework", "Homework\Homework.csproj", "{6D00F813-0DD0-48BE-A470-AFE5022FE3A3}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{A25C0C41-BD02-4ABD-AC94-9B3543FC44A1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A25C0C41-BD02-4ABD-AC94-9B3543FC44A1}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A25C0C41-BD02-4ABD-AC94-9B3543FC44A1}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A25C0C41-BD02-4ABD-AC94-9B3543FC44A1}.Release|Any CPU.Build.0 = Release|Any CPU
+		{500F9073-6AF4-46A4-9E0E-57AEDA18DA8A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{500F9073-6AF4-46A4-9E0E-57AEDA18DA8A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{500F9073-6AF4-46A4-9E0E-57AEDA18DA8A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{500F9073-6AF4-46A4-9E0E-57AEDA18DA8A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6D00F813-0DD0-48BE-A470-AFE5022FE3A3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6D00F813-0DD0-48BE-A470-AFE5022FE3A3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6D00F813-0DD0-48BE-A470-AFE5022FE3A3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6D00F813-0DD0-48BE-A470-AFE5022FE3A3}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {659E6E97-252F-4EDF-8507-FE6828E47D79}
+	EndGlobalSection
+EndGlobal
