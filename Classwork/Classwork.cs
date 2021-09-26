@@ -77,6 +77,53 @@ namespace Classwork
                     break;
             }
 
+            Console.WriteLine("\nTask 4");
+            try
+            {
+                Console.WriteLine("Введите порядковый номер карты k (6 <= k <= 14): ");
+                x = Convert.ToSByte(Console.ReadLine());
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex.Message);
+            }
+            finally
+            {
+                Console.Write("Ваша карта");
+                switch(x)
+                {
+                    case 6:
+                        Console.WriteLine("Шестерка");
+                        break;
+                    case 7:
+                        Console.WriteLine("Семерка");
+                        break;
+                    case 8:
+                        Console.WriteLine("Восьмерка");
+                        break;
+                    case 9:
+                        Console.WriteLine("Девятка");
+                        break;
+                    case 10:
+                        Console.WriteLine("Десятка");
+                        break;
+                    case 11:
+                        Console.WriteLine("Валет");
+                        break;
+                    case 12:
+                        Console.WriteLine("Дама");
+                        break;
+                    case 13:
+                        Console.WriteLine("Король");
+                        break;
+                    case 14:
+                        Console.WriteLine("Туз");
+                        break;
+                    default:
+                        Console.WriteLine("\nТакой карты не существует");
+                        break;
+                }
+            }
 
             Console.WriteLine("\nTask 5");
             Console.WriteLine("Земля — идеальная сфера с радиусом R = 6370 км." +
