@@ -82,15 +82,8 @@ namespace Classwork
             {
                 Console.WriteLine("Введите порядковый номер карты k (6 <= k <= 14): ");
                 x = Convert.ToSByte(Console.ReadLine());
-            }
-            catch (Exception ex)
-            {
-                Console.WriteLine(ex.Message);
-            }
-            finally
-            {
                 Console.Write("Ваша карта");
-                switch(x)
+                switch (x)
                 {
                     case 6:
                         Console.WriteLine("Шестерка");
@@ -124,6 +117,10 @@ namespace Classwork
                         break;
                 }
             }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex.Message);
+            }
 
             Console.WriteLine("\nTask 5");
             Console.WriteLine("Земля — идеальная сфера с радиусом R = 6370 км." +
@@ -155,6 +152,28 @@ namespace Classwork
                 }
             }
 
+            Console.WriteLine("\nTask 7");
+            try
+            {
+                Console.WriteLine("A - последовательность. А[n] - член последовательности.");
+                flag = true; a = 1; b = 0;
+                while(flag)
+                {
+                    Console.Write($"A[{a}] = ");
+                    x = Convert.ToInt32(Console.ReadLine());
+                    if (x < 0)
+                    {
+                        Console.WriteLine($"Среднее арифметическое A[n] > 0: {b / a}");
+                        flag = false;
+                    }
+                    b += x;
+                }
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex.Message);
+            }
+
             Console.WriteLine("\nTask 8");
             int[] sequence = new int[10];
             for (int i = 0; i < 10; i++)
@@ -162,7 +181,6 @@ namespace Classwork
                 sequence[i] = random.Next(500);
                 Console.WriteLine($"A[{i}] = {sequence[i]}");
             }
-            
             flag = true;
             x = sequence[0];
             for (int i = 0; i < 10; i++)
@@ -180,17 +198,28 @@ namespace Classwork
             }
 
             Console.WriteLine("\nTask 9");
+            Console.WriteLine("А - последовательность чисел");
+            flag = true;  a = 1; b = 0;
+            while (x != 0)
+            {
+                Console.Write($"A[{a}] = ");
+                x = Convert.ToInt32(Console.ReadLine());
+                if (a % 3 == 0)
+                {
+                    b += x;
+                }
+                a++;
+            }
+            Console.WriteLine($"Cумма элеентов с порядковым номер кратным трем равна: {b}");
+
 
             Console.WriteLine("\nTask 10");
             Console.WriteLine("А - последовательность");
-            x = 0; a = 1; b = 0;
+            a = 1; b = 0;
             Start:
             Console.Write($"A[{a}] = ");
             x = Convert.ToInt32(Console.ReadLine());
-            if (a % 3 == 0)
-            {
-                b += x;
-            }
+            b += x;
             a++;
             if (x != 0)
             {
