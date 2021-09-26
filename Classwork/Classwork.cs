@@ -14,9 +14,9 @@ namespace Classwork
             while (flag)
             {
                 int i = Convert.ToInt32(Console.ReadLine());
-                if (i > 999 && i < 99)
+                if (i > 999 || i < 99)
                 {
-                    Console.WriteLine("Число должно быть трехзначным, попробуй снова.");
+                    Console.Write("Число должно быть трехзначным, попробуй снова: ");
                 }
                 else
                 {
@@ -47,6 +47,7 @@ namespace Classwork
             }
 
             Console.WriteLine("\nTask 3");
+            Console.Write("Введите порядковый номер дня недели (1-7): ");
             x = Convert.ToInt32(Console.ReadLine());
             switch (x)
             {
@@ -68,8 +69,11 @@ namespace Classwork
                 case 6:
                     Console.WriteLine("Saturday");
                     break;
-                default:
+                case 7:
                     Console.WriteLine("Sunday");
+                    break;
+                default:
+                    Console.WriteLine("Жаль, но для такого порядкого номера дня недели не сущетсвует");
                     break;
             }
 
@@ -86,19 +90,19 @@ namespace Classwork
 
             Console.WriteLine("\nTask 6");
             flag = true;
+            Console.Write("Введите цифру:");
             while (flag)
             {
-                Console.Write("Введите цифру:");
                 x = Convert.ToInt32(Console.ReadLine());
-                if (x > 9 && x < 1)
+                if (x > 9 || x < 1)
                 {
-                    Console.WriteLine("Число должно быть натуральным и меньше 9, попробуй снова.");
+                    Console.Write("Число должно быть натуральным и меньше 9, попробуй снова: ");
                 }
                 else
                 {
                     for (int i = 1; i < 11; i++)
                     {
-                        Console.WriteLine();
+                        Console.WriteLine($"{x} * {i} = {x * i}" );
                         flag = false;
                     }
                 }
@@ -109,7 +113,9 @@ namespace Classwork
             for (int i = 0; i < 10; i++)
             {
                 sequence[i] = random.Next(500);
+                Console.WriteLine($"A[{i}] = {sequence[i]}");
             }
+            
             flag = true;
             x = sequence[0];
             for (int i = 0; i < 10; i++)
@@ -117,6 +123,7 @@ namespace Classwork
                 if (sequence[i] < x)
                 {
                     Console.WriteLine($"Последовательность неупорядоченная. A[{i}] нарушает порядок возрастания!");
+                    break;
                 }
                 x = sequence[i];
             }
@@ -137,10 +144,12 @@ namespace Classwork
             {
                 b += x;
             }
+            a++;
             if (x != 0)
             {
                 goto Start;
             }
+            Console.WriteLine($"Cумма элеентов с порядковым номер кратным трем равна: {b}");
 
 
 
