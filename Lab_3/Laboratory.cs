@@ -3,7 +3,7 @@ namespace Lab_3
 {
     enum Mounth
     {
-        January = 1,
+        January,
         February,
         March,
         April, 
@@ -21,12 +21,14 @@ namespace Lab_3
         static void Main(string[] args)
         {
             Console.WriteLine("All laboratory work");
+            var dayMonths = new byte[12] { 31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31 };
             Console.Write("Введите год: ");
             ushort dayAdd = Convert.ToUInt16(Console.ReadLine());
             dayAdd =  (ushort)(dayAdd % 400 == 0 || dayAdd % 4 == 0 && !(dayAdd % 100 == 0) ? 1 : 0);
             if(dayAdd == 1)
             {
                 Console.WriteLine("Введенный год високосный");
+                dayMonths[1]++;
             }
             else
             {
@@ -43,19 +45,13 @@ namespace Lab_3
                 }
                 else
                 {
-                    Console.WriteLine("Current date: ");
-                    if (day <= 31) { Console.Write($"{day} { (Mounth)1}"); }
-                    else if (day <= 59 + dayAdd) { Console.Write($"{day - 31} { (Mounth)2}"); }
-                    else if (day <= 90 + dayAdd) {Console.Write($"{day- 59 -dayAdd} { (Mounth)3}"); }
-                    else if (day <= 120 + dayAdd) { Console.Write($"{day - 90 - dayAdd} { (Mounth)4}"); }
-                    else if (day <= 151 + dayAdd) { Console.Write($"{day - 120 - dayAdd} { (Mounth)5}"); }
-                    else if (day <= 181 + dayAdd) { Console.Write($"{day - 121 - dayAdd} { (Mounth)6}"); }
-                    else if (day <= 212 + dayAdd) { Console.Write($"{day - 181 - dayAdd} { (Mounth)7}"); }
-                    else if (day <= 243 + dayAdd) { Console.Write($"{day - 212 - dayAdd} { (Mounth)8}"); }
-                    else if (day <= 273 + dayAdd) { Console.Write($"{day - 243 - dayAdd} { (Mounth)9}"); }
-                    else if (day <= 304 + dayAdd) { Console.Write($"{day - 273 - dayAdd} { (Mounth)10}"); }
-                    else if (day <= 334 + dayAdd) { Console.Write($"{day - 304 - dayAdd} { (Mounth)11}"); }
-                    else if (day <= 365 + dayAdd) { Console.Write($"{day - 334 - dayAdd} { (Mounth)12}"); }
+                    int numMounth = 0;
+                    while (day > dayMonths[numMounth])
+                    {
+                        day -= dayMonths[numMounth];
+                        numMounth++;
+                    }
+                    Console.WriteLine($"Current date: {day}{(Mounth)numMounth}");
                     flag = false;
                 }
 
