@@ -166,7 +166,7 @@ namespace Classwork
                         Console.WriteLine($"Среднее арифметическое A[n] > 0: {b / a}");
                         flag = false;
                     }
-                    b += x;
+                    b += x; a++;
                 }
             }
             catch (Exception ex)
@@ -175,31 +175,38 @@ namespace Classwork
             }
 
             Console.WriteLine("\nTask 8");
-            int[] sequence = new int[10];
-            for (int i = 0; i < 10; i++)
+            var sequence = new int[10];
+            try
             {
-                sequence[i] = random.Next(500);
-                Console.WriteLine($"A[{i}] = {sequence[i]}");
-            }
-            flag = true;
-            x = sequence[0];
-            for (int i = 0; i < 10; i++)
-            {
-                if (sequence[i] < x)
+                for (int i = 0; i < 10; i++)
                 {
-                    Console.WriteLine($"Последовательность неупорядоченная. A[{i}] нарушает порядок возрастания!");
-                    break;
+                    sequence[i] = random.Next(500);
+                    Console.WriteLine($"A[{i}] = {sequence[i]}");
                 }
-                x = sequence[i];
+                x = sequence[0]; flag = true;
+                for (int i = 0; i < 10; i++)
+                {
+                    if (sequence[i] < x)
+                    {
+                        Console.WriteLine($"Последовательность неупорядоченная. A[{i}] нарушает порядок возрастания!");
+                        flag = false; break;
+                    }
+                    x = sequence[i];
+                }
+                if (flag)
+                {
+                    Console.WriteLine("Данная последовательность упорядоченная по возрастанию!");
+                }
             }
-            if (flag)
+            catch (Exception ex)
             {
-                Console.WriteLine("Данная последовательность упорядоченная по возрастанию!");
+                Console.WriteLine(ex.Message);
             }
+        
 
             Console.WriteLine("\nTask 9");
             Console.WriteLine("А - последовательность чисел");
-            flag = true;  a = 1; b = 0;
+            a = 1; b = 0;
             while (x != 0)
             {
                 Console.Write($"A[{a}] = ");
@@ -209,8 +216,9 @@ namespace Classwork
                     b += x;
                 }
                 a++;
+                //А  зачем continue ???
             }
-            Console.WriteLine($"Cумма элеентов с порядковым номер кратным трем равна: {b}");
+            Console.WriteLine($"Cумма элементов с порядковым номер кратным трем равна: {b}");
 
 
             Console.WriteLine("\nTask 10");
