@@ -293,7 +293,7 @@ namespace Homework
 
             Console.WriteLine("Interesting task");
             var numUser = new int[100]; var numHacker = new int[100];
-            byte order = 0; long sum = 0;
+            byte order = 0; long suma = 0;
             for (int i = 0; i < 100; i++)
             {
                 numUser[i] = random.Next();
@@ -307,7 +307,7 @@ namespace Homework
             Console.WriteLine("\nПередача №1: сложения всех натуральных чисел программиста для поиска наивысшего порядка.");
             for (int i = 0; i < 100; i++)
             {
-                sum += numHacker[i] * numUser[i];
+                suma += numHacker[i] * numUser[i];
             }
             Console.WriteLine($"Cумма чисел программиста: {sum}");
             order = (byte)sum.ToString().Length;
@@ -320,7 +320,7 @@ namespace Homework
             }
             Console.WriteLine(numberHuge);
             Console.WriteLine("Из данного ОГРОМНОГО числа видны все числа программиста. А имеено: ");
-            numberHuge = numberHuge.Insert(0, "000000000000".Substring(0, order - numUser[99].ToString().Length));
+            numberHuge = numberHuge.Insert(0, "000000000000000".Substring(0, order - numUser[99].ToString().Length));
             for (int i = 0; i < 100; i++)
             {
                 Console.WriteLine($"{100-i}-ое число пользователя: {numberHuge.Substring(i*order, order).Trim('0')}");
