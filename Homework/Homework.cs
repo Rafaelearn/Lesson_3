@@ -115,27 +115,16 @@ namespace Homework
             Console.WriteLine($"Общий путь мужчины: {sum}");
 
             Console.WriteLine("\nTask 2.3");
-            var rainMarch = new double[30]; var rainJan = new double[30];
-            sum = 0;
-            for (int i = 0; i < 30; i++)
+            sum = 0; y = 0;
+            for (int i = 0; i < 31; i++)
             {
-                rainJan[i] = Math.Round(random.NextDouble() * 20, 3);
-                rainMarch[i] = Math.Round(random.NextDouble() * 12, 3);
-            }
-            Console.WriteLine("Количество осадков за март: \" ");
-            foreach (var item in rainMarch)
-            {
-                sum += item;
-                Console.Write(item + " ");
+                x = random.NextDouble() * 20;
+                sum += x;
+                x = random.NextDouble() * 12;
+                y += x;
             }
             Console.WriteLine($"\"\nСреднее количество осадков за март {Math.Round(sum / 30, 3)} мм.");
-            Console.WriteLine("Количество осадков за январь: \" ");
-            foreach (var item in rainJan)
-            {
-                sum += item;
-                Console.Write(item + " ");
-            }
-            Console.WriteLine($"\"\nСреднее количество осадков за январь {Math.Round(sum / 30, 3)} мм.");
+            Console.WriteLine($"\"\nСреднее количество осадков за январь {Math.Round(y / 30, 3)} мм.");
 
             Console.WriteLine("\nTask 3.1");
             x = 1; y = 1; double temp;
