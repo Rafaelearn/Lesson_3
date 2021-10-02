@@ -175,7 +175,7 @@ namespace Homework
             }
 
             Console.WriteLine("Chess");
-            byte a, b, c, d; bool flag = true;
+            bool flag = true;
             Console.WriteLine("Поле шахматной доски определяется парой натуральных чисел," +
                 " каждое из которых непревосходит 8: первое число — номер вертикали" +
                 "(при счете слева направо), второе — номер горизонтали(при счете снизу вверх). " +
@@ -183,13 +183,13 @@ namespace Homework
             while (flag)
             {
                 Console.Write("a = ");
-                byte.TryParse(Console.ReadLine(), out a);
+                byte.TryParse(Console.ReadLine(), out byte a);
                 Console.Write("b = ");
-                byte.TryParse(Console.ReadLine(), out b);
+                byte.TryParse(Console.ReadLine(), out byte b);
                 Console.Write("c = ");
-                byte.TryParse(Console.ReadLine(), out c);
+                byte.TryParse(Console.ReadLine(), out byte c);
                 Console.Write("d = ");
-                byte.TryParse(Console.ReadLine(), out d);
+                byte.TryParse(Console.ReadLine(), out byte d);
                 if (a == 0 || b == 0 || c == 0 || d == 0 || a > 8 || b > 8 || c > 8 || d > 8)
                 {
                     Console.WriteLine("Введенные значения не удовлетворяют" +
@@ -326,17 +326,13 @@ namespace Homework
                 Console.WriteLine($"{100-i}-ое число пользователя: {numberHuge.Substring(i*order, order).Trim('0')}");
             }
             
-
-
-            
-
-
             Console.ReadKey();
         }
         static double Abs(double x)
         {
             x = x > 0 ? x : -x;
             return x;
+            
         }
         
     }

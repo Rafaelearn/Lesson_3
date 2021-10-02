@@ -8,7 +8,7 @@ namespace Classwork
         {
             Random random = new Random();
 
-            Console.WriteLine("\nTask 1");
+            Console.WriteLine("Task 1");
             bool flag = true;
             Console.Write("Введите трехзначное положительное число: ");
             while (flag)
@@ -33,9 +33,9 @@ namespace Classwork
             }
 
             Console.WriteLine("\nTask 2");
-            double a = random.NextDouble() * 60; 
-            double b = random.NextDouble() * 60;
-            double x = random.NextDouble() * 20;
+            double a = Math.Round(random.NextDouble() * 60, 4); 
+            double b = Math.Round(random.NextDouble() * 60, 4);
+            double x = Math.Round(random.NextDouble() * 20, 4);
             Console.WriteLine($"Диаметр головы Васи диаметром {x}. Размеры окна {a} x {b}");
             if (x < a + 2 && x < b + 2) 
             {
@@ -203,7 +203,6 @@ namespace Classwork
                 Console.WriteLine(ex.Message);
             }
         
-
             Console.WriteLine("\nTask 9");
             Console.WriteLine("А - последовательность чисел");
             a = 1; b = 0;
@@ -220,7 +219,6 @@ namespace Classwork
             }
             Console.WriteLine($"Cумма элементов с порядковым номер кратным трем равна: {b}");
 
-
             Console.WriteLine("\nTask 10");
             Console.WriteLine("А - последовательность");
             a = 1; b = 0;
@@ -235,8 +233,7 @@ namespace Classwork
             }
             Console.WriteLine($"Cумма элеентов с порядковым номер кратным трем равна: {b}");
 
-
-
+            Console.ReadKey();
         }
     }
 }
