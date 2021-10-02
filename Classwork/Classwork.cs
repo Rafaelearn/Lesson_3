@@ -13,7 +13,7 @@ namespace Classwork
             Console.Write("Введите трехзначное положительное число: ");
             while (flag)
             {
-                int i = Convert.ToInt32(Console.ReadLine());
+                int.TryParse(Console.ReadLine(), out int i);
                 if (i > 999 || i < 99)
                 {
                     Console.Write("Число должно быть трехзначным, попробуй снова: ");
@@ -48,7 +48,7 @@ namespace Classwork
 
             Console.WriteLine("\nTask 3");
             Console.Write("Введите порядковый номер дня недели (1-7): ");
-            x = Convert.ToInt32(Console.ReadLine());
+            double.TryParse(Console.ReadLine(), out x);
             switch (x)
             {
                 case 1:
@@ -231,7 +231,7 @@ namespace Classwork
             {
                 goto Start;
             }
-            Console.WriteLine($"Cумма элеентов с порядковым номер кратным трем равна: {b}");
+            Console.WriteLine($"Cумма элементов равна: {b}");
 
             Console.ReadKey();
         }

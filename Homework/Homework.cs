@@ -10,21 +10,35 @@ namespace Homework
 
             Console.WriteLine("Task 1.1");
             Console.Write("Введите действительное число x = ");
-            double x = Convert.ToDouble(Console.ReadLine());
-            Console.WriteLine($"Его абсолютная величина равна {Abs(x)}");
+            bool flag = double.TryParse(Console.ReadLine(), out double x);
+            if (flag)
+            {
+                Console.WriteLine($"Его абсолютная величина равна {Abs(x)}");
+            }
+            else
+            {
+                Console.WriteLine("Вы ввели неправильное значение;");
+            }
 
             Console.WriteLine("\nTask 1.2");
-            Console.Write("Введите действительное число x = ");
-            x = Convert.ToDouble(Console.ReadLine());
-            Console.Write("Введите действительное число x = ");
-            double y = Convert.ToDouble(Console.ReadLine());
-            x = Abs(x) > Abs(y) ? x / 2 : x;
-            Console.WriteLine($"После преобразования x = {x}");
+            double y;
+            try
+            {
+                Console.Write("Введите действительное число x = ");
+                x = Convert.ToDouble(Console.ReadLine());
+                Console.Write("Введите действительное число x = ");
+                y = Convert.ToDouble(Console.ReadLine());
+                x = Abs(x) > Abs(y) ? x / 2 : x;
+                Console.WriteLine($"После преобразования x = {x}");
+            }
+            catch(Exception ex)
+            {
+                Console.WriteLine(ex.Message);
+            }
 
             Console.WriteLine("\nTask 1.3");
             Console.Write("Введите животное(alligator): ");
             string s = Console.ReadLine();
-
             if (s.ToUpper() == "ALLIGATOR")
             {
                 s = "small";
@@ -76,12 +90,12 @@ namespace Homework
             Console.WriteLine($"String contains \"english\": {s.ToLower().Contains("english")}");
 
             Console.WriteLine("\nTask 2.1");
-            x = 1; double sum = 1;
-            for (int i = 0; i < 8; i++)
+            x = 1; double sum;
+            for (int i = 0; i < 9; i++)
             {
                 x /= 3;
-                sum += x;
             }
+            sum = (x - 1) / (-2.0 / 3); //Cумма геометрической прогрессии для q = 1/3
             Console.WriteLine($"Искомая сумма равна {sum}");
 
             Console.WriteLine("\nTask 2.2");
@@ -90,8 +104,10 @@ namespace Homework
             {
                 sum = i % 2 == 0 ? sum - 1.0 / i : sum + 1.0 / i;
             }
-            Console.WriteLine($"Расстояние до дома {sum}");
             sum = 0;
+            // Сумма первых 100 членов гармонического ряда
+            // S(x) = ln(x) + q (q = 0,5772156649....)
+            //sum  = Math.Log(100) + 0.5772156649;
             for (int i = 1; i < 101; i++)
             {
                 sum += 1.0 / i;
@@ -175,7 +191,7 @@ namespace Homework
             }
 
             Console.WriteLine("Chess");
-            bool flag = true;
+            flag = true;
             Console.WriteLine("Поле шахматной доски определяется парой натуральных чисел," +
                 " каждое из которых непревосходит 8: первое число — номер вертикали" +
                 "(при счете слева направо), второе — номер горизонтали(при счете снизу вверх). " +
