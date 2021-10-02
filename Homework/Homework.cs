@@ -39,14 +39,7 @@ namespace Homework
             Console.WriteLine("\nTask 1.3");
             Console.Write("Введите животное(alligator): ");
             string s = Console.ReadLine();
-            if (s.ToUpper() == "ALLIGATOR")
-            {
-                s = "small";
-            }
-            else
-            {
-                s = "wide";
-            }
+            s = s.ToLower() != "alligator" ? "wide": "small";
             Console.WriteLine($"mouthSize = {s}");
 
             Console.WriteLine("\nTask 1.4");
